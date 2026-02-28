@@ -84,8 +84,8 @@ export default function GoldPricing({ pricePerGram24K, isLive, updatedAt }: Prop
 
         <p className="text-center text-cream/20 text-xs mt-8">
           {isLive
-            ? "Prix basés sur le cours international de l\u2019or \u2014 actualisés toutes les heures"
-            : "Prix indicatifs \u2014 contactez-nous pour une estimation personnalisée"}
+            ? "Prix basés sur le cours international de l\u2019or + 10\u00A0% de frais \u2014 actualisés toutes les heures"
+            : "Prix indicatifs (frais de 10\u00A0% inclus) \u2014 contactez-nous pour une estimation personnalisée"}
         </p>
       </div>
     </section>

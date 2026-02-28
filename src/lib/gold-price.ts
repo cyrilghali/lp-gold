@@ -1,5 +1,6 @@
 const FALLBACK_PRICE_PER_GRAM_24K = 73.5;
 const TROY_OUNCE_IN_GRAMS = 31.1035;
+const FEE_RATE = 0.10; // 10% de frais
 
 export interface GoldPrice {
   pricePerGram24K: number;
@@ -12,7 +13,7 @@ export async function fetchGoldPrice(): Promise<GoldPrice> {
 
   if (!apiKey) {
     return {
-      pricePerGram24K: FALLBACK_PRICE_PER_GRAM_24K,
+      pricePerGram24K: Math.round(FALLBACK_PRICE_PER_GRAM_24K * (1 + FEE_RATE) * 100) / 100,
       updatedAt: new Date().toISOString(),
       isLive: false,
     };
@@ -31,15 +32,16 @@ export async function fetchGoldPrice(): Promise<GoldPrice> {
     const data = await res.json();
     const pricePerOunce: number = data.price;
     const pricePerGram = pricePerOunce / TROY_OUNCE_IN_GRAMS;
+    const priceWithFees = pricePerGram * (1 + FEE_RATE);
 
     return {
-      pricePerGram24K: Math.round(pricePerGram * 100) / 100,
+      pricePerGram24K: Math.round(priceWithFees * 100) / 100,
       updatedAt: new Date().toISOString(),
       isLive: true,
     };
   } catch {
     return {
-      pricePerGram24K: FALLBACK_PRICE_PER_GRAM_24K,
+      pricePerGram24K: Math.round(FALLBACK_PRICE_PER_GRAM_24K * (1 + FEE_RATE) * 100) / 100,
       updatedAt: new Date().toISOString(),
       isLive: false,
     };
