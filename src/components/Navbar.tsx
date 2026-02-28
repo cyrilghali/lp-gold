@@ -21,13 +21,14 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-noir/95 backdrop-blur-sm border-b border-gold/10"
           : "bg-transparent"
       }`}
     >
+    <nav>
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -112,5 +113,7 @@ export default function Navbar() {
         </div>
       )}
     </nav>
+    </header>
+  
   );
 }
