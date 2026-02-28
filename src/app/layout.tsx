@@ -125,7 +125,7 @@ const jsonLd = {
     "@type": "City",
     name: "Noisy-le-Grand",
   },
-  sameAs: ["https://www.instagram.com/lp_gold_/"],
+  sameAs: ["https://www.instagram.com/lp.gold"],
 };
 
 const faqJsonLd = {

@@ -51,7 +51,7 @@ export default function Navbar() {
           {/* CTA + Social */}
           <div className="hidden md:flex items-center gap-6">
             <a
-              href="https://www.instagram.com/lp_gold_/"
+              href="https://www.instagram.com/lp.gold"
               target="_blank"
               rel="noopener noreferrer"
               className="text-cream/40 hover:text-gold transition-colors"

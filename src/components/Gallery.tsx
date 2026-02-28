@@ -106,7 +106,7 @@ export default function Gallery() {
         <p className="text-center text-cream/20 text-xs mt-8">
           Photos de nos réalisations bientôt disponibles &mdash; suivez-nous sur{" "}
           <a
-            href="https://www.instagram.com/lp_gold_/"
+            href="https://www.instagram.com/lp.gold"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gold/40 hover:text-gold transition-colors"

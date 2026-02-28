@@ -17,7 +17,7 @@ export default function Footer() {
           {/* Social */}
           <div className="flex items-center gap-5">
             <a
-              href="https://www.instagram.com/lp_gold_/"
+              href="https://www.instagram.com/lp.gold"
               target="_blank"
               rel="noopener noreferrer"
               className="text-cream/25 hover:text-gold transition-colors"
