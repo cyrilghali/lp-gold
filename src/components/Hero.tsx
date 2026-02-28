@@ -1,17 +1,21 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-noir" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_40%,_rgba(201,168,76,0.08)_0%,_transparent_60%)]" />
-
-      {/* Subtle texture */}
-      <div
-        className="absolute inset-0 opacity-[0.015]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0v100M0 50h100' stroke='%23C9A84C' stroke-width='0.5' fill='none'/%3E%3C/svg%3E")`,
-        }}
+      {/* Background image */}
+      <Image
+        src="/images/hero/hero-bg.jpg"
+        alt=""
+        fill
+        priority
+        className="object-cover"
+        quality={85}
+        sizes="100vw"
       />
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-noir/60" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_40%,_rgba(201,168,76,0.06)_0%,_transparent_60%)]" />
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center pt-20">
