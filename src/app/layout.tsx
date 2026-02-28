@@ -90,7 +90,7 @@ const jsonLd = {
     "Expert en achat et vente d'or et création de bijoux sur mesure à Noisy-le-Grand.",
   url: "https://lp-gold.com",
   telephone: "+33663239491",
-  email: "lpgold93160@gmail.com",
+  email: "contact@lp-gold.com",
   image: "https://lp-gold.com/images/og-image.jpg",
   logo: {
     "@type": "ImageObject",

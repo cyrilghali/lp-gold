@@ -6,8 +6,8 @@ const contactInfo = [
   },
   {
     label: "Email",
-    value: "lpgold93160@gmail.com",
-    href: "mailto:lpgold93160@gmail.com",
+    value: "contact@lp-gold.com",
+    href: "mailto:contact@lp-gold.com",
   },
   {
     label: "Adresse",
