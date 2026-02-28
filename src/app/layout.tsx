@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
@@ -12,7 +12,14 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0C0B09",
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://lp-gold.com"),
   title: "LP Gold — Achat & Vente d'Or | Bijoux sur Mesure | Noisy-le-Grand",
   description:
     "LP Gold, votre expert en achat et vente d'or à Noisy-le-Grand (93). Estimation gratuite, paiement immédiat, meilleurs prix garantis. Création de bijoux sur mesure.",
@@ -28,6 +35,9 @@ export const metadata: Metadata = {
     "LP Gold",
   ],
   authors: [{ name: "LP Gold" }],
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "48x48" },
@@ -39,28 +49,28 @@ export const metadata: Metadata = {
     title: "LP Gold — Achat & Vente d'Or | Bijoux sur Mesure",
     description:
       "Expert en achat/vente d'or et création de bijoux sur mesure à Noisy-le-Grand. Estimation gratuite, paiement immédiat.",
-    url: "https://lpgold.fr",
+    url: "https://lp-gold.com",
     siteName: "LP Gold",
     locale: "fr_FR",
     type: "website",
     images: [
       {
-        url: "https://lpgold.fr/images/og-image.jpg",
-        width: 512,
-        height: 512,
-        alt: "LP Gold — Expert en achat et vente d'or",
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "LP Gold — Expert en achat et vente d'or à Noisy-le-Grand",
       },
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "LP Gold — Achat & Vente d'Or | Bijoux sur Mesure",
     description:
       "Expert en achat/vente d'or et création de bijoux sur mesure à Noisy-le-Grand.",
     images: [
       {
-        url: "https://lpgold.fr/images/og-image.jpg",
-        alt: "LP Gold — Expert en achat et vente d'or",
+        url: "/images/og-image.jpg",
+        alt: "LP Gold — Expert en achat et vente d'or à Noisy-le-Grand",
       },
     ],
   },
@@ -74,12 +84,20 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": "https://lp-gold.com/#organization",
   name: "LP Gold",
   description:
     "Expert en achat et vente d'or et création de bijoux sur mesure à Noisy-le-Grand.",
-  url: "https://lpgold.fr",
+  url: "https://lp-gold.com",
   telephone: "+33663239491",
   email: "lpgold93160@gmail.com",
+  image: "https://lp-gold.com/images/og-image.jpg",
+  logo: {
+    "@type": "ImageObject",
+    url: "https://lp-gold.com/icon.png",
+    width: 192,
+    height: 192,
+  },
   address: {
     "@type": "PostalAddress",
     streetAddress: "21 Avenue Emile Cossonneau",
@@ -127,15 +145,31 @@ const faqJsonLd = {
       name: "Quels types d'or rachetez-vous ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Nous rachetons toutes les formes d'or : bijoux, pièces de monnaie, lingots, or dentaire, débris d'or et or cassé.",
+        text: "Nous rachetons toutes les formes d'or : bijoux, pièces de monnaie, lingots, or dentaire, débris d'or et or cassé. Peu importe l'état, nous pouvons l'évaluer.",
       },
     },
     {
       "@type": "Question",
-      name: "L'estimation est-elle vraiment gratuite et sans engagement ?",
+      name: "L'estimation est-elle gratuite et sans engagement ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Oui, l'estimation est 100% gratuite et sans aucune obligation. Si notre offre ne vous convient pas, vous repartez avec vos objets sans frais.",
+        text: "Oui, absolument. L'estimation est 100% gratuite et sans aucune obligation. Si notre offre ne vous convient pas, vous repartez avec vos objets sans frais.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Comment fonctionne la création de bijoux sur mesure ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Tout commence par un rendez-vous pour discuter de votre projet. Nous réalisons des croquis et un devis détaillé. Après validation, votre bijou est créé artisanalement. Le délai varie selon la complexité, généralement entre 2 et 4 semaines.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Quels sont vos moyens de paiement ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Pour le rachat d'or, nous payons en espèces (dans les limites légales) ou par virement bancaire instantané. Le paiement est effectué le jour même.",
       },
     },
     {
@@ -143,7 +177,7 @@ const faqJsonLd = {
       name: "Faut-il prendre rendez-vous ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Non, vous pouvez venir directement en boutique pendant nos horaires d'ouverture (lundi au samedi, 10h-19h). Pour la création de bijoux sur mesure, nous recommandons de prendre rendez-vous.",
+        text: "Non, vous pouvez venir directement en boutique du lundi au samedi, de 10h à 19h. Pour la création de bijoux sur mesure, nous recommandons de prendre rendez-vous.",
       },
     },
   ],
