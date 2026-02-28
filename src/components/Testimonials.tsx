@@ -22,7 +22,7 @@ export default function Testimonials() {
             Témoignages
           </p>
           <h2 className="font-[var(--font-display)] text-3xl sm:text-5xl font-normal text-cream">
-            Ils Nous Font <span className="italic text-gold">Confiance</span>
+            Ils nous font <span className="italic text-gold">confiance</span>
           </h2>
         </div>
 
@@ -38,7 +38,7 @@ export default function Testimonials() {
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-6 h-px bg-gold/30" />
-                <span className="text-[12px] tracking-[0.15em] uppercase text-cream/40">
+                <span className="text-[12px] tracking-[0.08em] text-cream/40">
                   {t.name}
                 </span>
               </div>

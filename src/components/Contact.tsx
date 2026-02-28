@@ -30,7 +30,7 @@ export default function Contact() {
             Contact
           </p>
           <h2 className="font-[var(--font-display)] text-3xl sm:text-5xl font-normal text-cream">
-            Rendez-nous <span className="italic text-gold">Visite</span>
+            Rendez-nous <span className="italic text-gold">visite</span>
           </h2>
         </div>
 

@@ -120,7 +120,7 @@ const jsonLd = {
   ],
   priceRange: "$$",
   currenciesAccepted: "EUR",
-  paymentAccepted: "Cash, Bank Transfer",
+  paymentAccepted: "Bank Transfer",
   areaServed: {
     "@type": "City",
     name: "Noisy-le-Grand",
@@ -169,7 +169,7 @@ const faqJsonLd = {
       name: "Quels sont vos moyens de paiement ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Pour le rachat d'or, nous payons en espèces (dans les limites légales) ou par virement bancaire instantané. Le paiement est effectué le jour même.",
+        text: "Pour le rachat d'or, nous payons par virement bancaire instantané. Le paiement est effectué le jour même.",
       },
     },
     {

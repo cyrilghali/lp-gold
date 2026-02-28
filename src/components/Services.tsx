@@ -60,9 +60,9 @@ export default function Services() {
             Nos Services
           </p>
           <h2 className="font-[var(--font-display)] text-3xl sm:text-5xl font-normal text-cream">
-            L&apos;Excellence au Service
+            L&apos;excellence au service
             <br />
-            <span className="italic text-gold">de Votre Or</span>
+            <span className="italic text-gold">de votre or</span>
           </h2>
         </div>
 

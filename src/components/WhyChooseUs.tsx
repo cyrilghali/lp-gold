@@ -9,7 +9,7 @@ const values = [
   },
   {
     title: "Paiement Immédiat",
-    description: "Espèces ou virement bancaire le jour même de la transaction.",
+    description: "Virement bancaire le jour même de la transaction.",
   },
   {
     title: "Confidentialité",

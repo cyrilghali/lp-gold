@@ -26,7 +26,7 @@ const faqs = [
   {
     question: "Quels sont vos moyens de paiement ?",
     answer:
-      "Pour le rachat d'or, nous payons en espèces (dans les limites légales) ou par virement bancaire instantané. Le paiement est effectué le jour même.",
+      "Pour le rachat d'or, nous payons par virement bancaire instantané. Le paiement est effectué le jour même.",
   },
   {
     question: "Faut-il prendre rendez-vous ?",

@@ -79,7 +79,7 @@ export default function Gallery() {
             Galerie
           </p>
           <h2 className="font-[var(--font-display)] text-3xl sm:text-5xl font-normal text-cream">
-            Nos <span className="italic text-gold">Créations</span>
+            Nos <span className="italic text-gold">créations</span>
           </h2>
         </div>
 

@@ -23,7 +23,7 @@ export default function GoldPricing({ pricePerGram24K, isLive, updatedAt }: Prop
             Cours de l&apos;Or
           </p>
           <h2 className="font-[var(--font-display)] text-3xl sm:text-5xl font-normal text-cream mb-4">
-            Prix de <span className="italic text-gold">Rachat</span>
+            Prix de <span className="italic text-gold">rachat</span>
           </h2>
           {/* Live indicator */}
           <div className="flex items-center justify-center gap-2 mt-4">

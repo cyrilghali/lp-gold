@@ -38,9 +38,9 @@ export default function GoldCalculator({ pricePerGram24K, isLive, updatedAt }: P
             Estimation Gratuite
           </p>
           <h2 className="font-[var(--font-display)] text-3xl sm:text-5xl font-normal text-cream">
-            Calculez la <span className="italic text-gold">Valeur</span>
+            Calculez la <span className="italic text-gold">valeur</span>
             <br />
-            de Votre Or
+            de votre or
           </h2>
         </div>
 

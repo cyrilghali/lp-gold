@@ -13,7 +13,7 @@ const steps = [
   },
   {
     title: "Paiement",
-    description: "Règlement immédiat en espèces ou par virement bancaire.",
+    description: "Règlement immédiat par virement bancaire.",
   },
 ];
 
@@ -26,7 +26,7 @@ export default function Process() {
             Simple &amp; Rapide
           </p>
           <h2 className="font-[var(--font-display)] text-3xl sm:text-5xl font-normal text-cream">
-            Comment <span className="italic text-gold">ça Marche</span>
+            Comment <span className="italic text-gold">ça marche</span>
           </h2>
         </div>
 
