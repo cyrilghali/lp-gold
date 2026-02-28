@@ -28,6 +28,13 @@ export const metadata: Metadata = {
     "LP Gold",
   ],
   authors: [{ name: "LP Gold" }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/icon.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   openGraph: {
     title: "LP Gold — Achat & Vente d'Or | Bijoux sur Mesure",
     description:
@@ -36,12 +43,26 @@ export const metadata: Metadata = {
     siteName: "LP Gold",
     locale: "fr_FR",
     type: "website",
+    images: [
+      {
+        url: "https://lpgold.fr/images/og-image.jpg",
+        width: 512,
+        height: 512,
+        alt: "LP Gold — Expert en achat et vente d'or",
+      },
+    ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "LP Gold — Achat & Vente d'Or | Bijoux sur Mesure",
     description:
       "Expert en achat/vente d'or et création de bijoux sur mesure à Noisy-le-Grand.",
+    images: [
+      {
+        url: "https://lpgold.fr/images/og-image.jpg",
+        alt: "LP Gold — Expert en achat et vente d'or",
+      },
+    ],
   },
   robots: {
     index: true,
