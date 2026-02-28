@@ -1,6 +1,6 @@
 const FALLBACK_PRICE_PER_GRAM_24K = 73.5;
 const TROY_OUNCE_IN_GRAMS = 31.1035;
-const FEE_RATE = 0.10; // 10% de frais
+const FEE_RATE = 0; // pas de frais
 
 export interface GoldPrice {
   pricePerGram24K: number;
