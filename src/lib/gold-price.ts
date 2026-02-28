@@ -1,6 +1,6 @@
 const FALLBACK_PRICE_PER_GRAM_24K = 73.5;
 const TROY_OUNCE_IN_GRAMS = 31.1035;
-const FEE_RATE = 0; // pas de frais
+const BUYBACK_DISCOUNT = 0.10; // 10% en dessous du cours (prix de rachat)
 
 export interface GoldPrice {
   pricePerGram24K: number;
@@ -13,7 +13,7 @@ export async function fetchGoldPrice(): Promise<GoldPrice> {
 
   if (!apiKey) {
     return {
-      pricePerGram24K: Math.round(FALLBACK_PRICE_PER_GRAM_24K * (1 + FEE_RATE) * 100) / 100,
+      pricePerGram24K: Math.round(FALLBACK_PRICE_PER_GRAM_24K * (1 - BUYBACK_DISCOUNT) * 100) / 100,
       updatedAt: new Date().toISOString(),
       isLive: false,
     };
@@ -32,16 +32,16 @@ export async function fetchGoldPrice(): Promise<GoldPrice> {
     const data = await res.json();
     const pricePerOunce: number = data.price;
     const pricePerGram = pricePerOunce / TROY_OUNCE_IN_GRAMS;
-    const priceWithFees = pricePerGram * (1 + FEE_RATE);
+    const buybackPrice = pricePerGram * (1 - BUYBACK_DISCOUNT);
 
     return {
-      pricePerGram24K: Math.round(priceWithFees * 100) / 100,
+      pricePerGram24K: Math.round(buybackPrice * 100) / 100,
       updatedAt: new Date().toISOString(),
       isLive: true,
     };
   } catch {
     return {
-      pricePerGram24K: Math.round(FALLBACK_PRICE_PER_GRAM_24K * (1 + FEE_RATE) * 100) / 100,
+      pricePerGram24K: Math.round(FALLBACK_PRICE_PER_GRAM_24K * (1 - BUYBACK_DISCOUNT) * 100) / 100,
       updatedAt: new Date().toISOString(),
       isLive: false,
     };
