@@ -12,8 +12,13 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollAnimator from "@/components/ScrollAnimator";
+import { fetchGoldPrice } from "@/lib/gold-price";
 
-export default function Home() {
+export const revalidate = 3600; // revalidate every hour
+
+export default async function Home() {
+  const goldPrice = await fetchGoldPrice();
+
   return (
     <>
       <ScrollAnimator />
@@ -23,8 +28,16 @@ export default function Home() {
         <Services />
         <WhyChooseUs />
         <Process />
-        <GoldCalculator />
-        <GoldPricing />
+        <GoldCalculator
+          pricePerGram24K={goldPrice.pricePerGram24K}
+          isLive={goldPrice.isLive}
+          updatedAt={goldPrice.updatedAt}
+        />
+        <GoldPricing
+          pricePerGram24K={goldPrice.pricePerGram24K}
+          isLive={goldPrice.isLive}
+          updatedAt={goldPrice.updatedAt}
+        />
         <Gallery />
         <Testimonials />
         <FAQ />

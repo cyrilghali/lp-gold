@@ -1,12 +1,20 @@
-const goldPrices = [
-  { karat: "9K", purity: "375\u2030", pricePerGram: "27.50" },
-  { karat: "14K", purity: "585\u2030", pricePerGram: "42.90" },
-  { karat: "18K", purity: "750\u2030", pricePerGram: "55.00" },
-  { karat: "22K", purity: "916\u2030", pricePerGram: "67.20" },
-  { karat: "24K", purity: "999\u2030", pricePerGram: "73.50" },
-];
+import { computeKaratPrices } from "@/lib/gold-price";
 
-export default function GoldPricing() {
+interface Props {
+  pricePerGram24K: number;
+  isLive: boolean;
+  updatedAt: string;
+}
+
+export default function GoldPricing({ pricePerGram24K, isLive, updatedAt }: Props) {
+  const prices = computeKaratPrices(pricePerGram24K);
+  const pricePerKilo = Math.round(pricePerGram24K * 1000);
+
+  const formattedTime = new Date(updatedAt).toLocaleTimeString("fr-FR", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
   return (
     <section id="pricing" className="py-32 bg-noir-light">
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
@@ -17,6 +25,15 @@ export default function GoldPricing() {
           <h2 className="font-[var(--font-display)] text-3xl sm:text-5xl font-normal text-cream mb-4">
             Prix de <span className="italic text-gold">Rachat</span>
           </h2>
+          {/* Live indicator */}
+          <div className="flex items-center justify-center gap-2 mt-4">
+            <span className={`w-1.5 h-1.5 rounded-full ${isLive ? "bg-green-500" : "bg-cream/20"}`} />
+            <span className="text-[11px] tracking-[0.15em] uppercase text-cream/30">
+              {isLive
+                ? `Mis à jour à ${formattedTime}`
+                : "Prix indicatif"}
+            </span>
+          </div>
         </div>
 
         {/* Kilo highlight */}
@@ -25,7 +42,7 @@ export default function GoldPricing() {
             Or pur 24K &mdash; Prix au kilogramme
           </p>
           <p className="font-[var(--font-display)] text-5xl sm:text-6xl text-gold font-normal">
-            73&nbsp;500&nbsp;&euro;
+            {pricePerKilo.toLocaleString("fr-FR")}&nbsp;&euro;
           </p>
           <div className="gold-rule mx-auto mt-6" />
         </div>
@@ -47,7 +64,7 @@ export default function GoldPricing() {
               </tr>
             </thead>
             <tbody>
-              {goldPrices.map((row) => (
+              {prices.map((row) => (
                 <tr
                   key={row.karat}
                   className="border-b border-cream/5 hover:bg-gold/[0.02] transition-colors"
@@ -66,7 +83,9 @@ export default function GoldPricing() {
         </div>
 
         <p className="text-center text-cream/20 text-xs mt-8">
-          Prix indicatifs &mdash; contactez-nous pour une estimation personnalisée
+          {isLive
+            ? "Prix basés sur le cours international de l\u2019or \u2014 actualisés toutes les heures"
+            : "Prix indicatifs \u2014 contactez-nous pour une estimation personnalisée"}
         </p>
       </div>
     </section>

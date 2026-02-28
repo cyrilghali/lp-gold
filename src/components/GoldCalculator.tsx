@@ -10,14 +10,23 @@ const karatOptions = [
   { label: "24K (999\u2030)", karat: "24K", factor: 0.999 },
 ];
 
-const BASE_PRICE_PER_GRAM_24K = 73.5;
+interface Props {
+  pricePerGram24K: number;
+  isLive: boolean;
+  updatedAt: string;
+}
 
-export default function GoldCalculator() {
+export default function GoldCalculator({ pricePerGram24K, isLive, updatedAt }: Props) {
   const [weight, setWeight] = useState("");
   const [selectedKarat, setSelectedKarat] = useState(karatOptions[2]);
 
   const weightNum = parseFloat(weight) || 0;
-  const estimatedPrice = weightNum * BASE_PRICE_PER_GRAM_24K * selectedKarat.factor;
+  const estimatedPrice = weightNum * pricePerGram24K * selectedKarat.factor;
+
+  const formattedTime = new Date(updatedAt).toLocaleTimeString("fr-FR", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 
   return (
     <section id="calculator" className="py-32 bg-noir relative overflow-hidden">
@@ -36,6 +45,16 @@ export default function GoldCalculator() {
         </div>
 
         <div className="scroll-animate border border-cream/8 p-8 sm:p-10">
+          {/* Live price indicator */}
+          <div className="flex items-center justify-center gap-2 mb-8">
+            <span className={`w-1.5 h-1.5 rounded-full ${isLive ? "bg-green-500" : "bg-cream/20"}`} />
+            <span className="text-[11px] tracking-[0.15em] uppercase text-cream/30">
+              {isLive
+                ? `Cours en direct \u2014 ${formattedTime}`
+                : "Prix indicatif"}
+            </span>
+          </div>
+
           <div className="grid sm:grid-cols-2 gap-6 mb-10">
             {/* Weight */}
             <div>
@@ -89,7 +108,7 @@ export default function GoldCalculator() {
             </p>
             {weightNum > 0 && (
               <p className="text-cream/25 text-xs mt-3">
-                {weightNum}g &times; {selectedKarat.label} &times; {BASE_PRICE_PER_GRAM_24K}&nbsp;&euro;/g
+                {weightNum}g &times; {selectedKarat.label} &times; {pricePerGram24K}&nbsp;&euro;/g
               </p>
             )}
           </div>
