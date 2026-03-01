@@ -55,7 +55,7 @@ export default function Hero() {
               Estimer Mon Or
             </a>
             <a
-              href="tel:+33663239491"
+              href="tel:+33668422750"
               className="inline-flex items-center gap-3 text-[13px] tracking-[0.12em] uppercase text-cream/50 hover:text-gold transition-colors"
             >
               <span className="w-10 h-px bg-cream/20" />

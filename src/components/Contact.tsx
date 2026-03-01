@@ -1,8 +1,8 @@
 const contactInfo = [
   {
     label: "Téléphone",
-    value: "+33 6 63 23 94 91",
-    href: "tel:+33663239491",
+    value: "+33 6 68 42 27 50",
+    href: "tel:+33668422750",
   },
   {
     label: "Email",
@@ -74,7 +74,7 @@ export default function Contact() {
 
             {/* Quick CTA */}
             <a
-              href="https://wa.me/33663239491?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20vos%20services."
+              href="https://wa.me/33668422750?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20vos%20services."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 text-[13px] tracking-[0.12em] uppercase text-gold hover:text-gold-light transition-colors"
