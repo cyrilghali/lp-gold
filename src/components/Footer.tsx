@@ -28,7 +28,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://wa.me/33663239491"
+              href="https://wa.me/33668422750"
               target="_blank"
               rel="noopener noreferrer"
               className="text-cream/25 hover:text-gold transition-colors"
@@ -39,7 +39,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="tel:+33663239491"
+              href="tel:+33668422750"
               className="text-cream/25 hover:text-gold transition-colors"
               aria-label="Telephone"
             >

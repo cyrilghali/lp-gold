@@ -63,7 +63,7 @@ export default function Navbar() {
               </svg>
             </a>
             <a
-              href="tel:+33663239491"
+              href="tel:+33668422750"
               className="text-[13px] tracking-[0.12em] uppercase text-gold border-b border-gold/40 pb-0.5 hover:border-gold transition-colors"
             >
               Appeler
@@ -103,10 +103,10 @@ export default function Navbar() {
             ))}
             <div className="pt-5 border-t border-gold/10">
               <a
-                href="tel:+33663239491"
+                href="tel:+33668422750"
                 className="text-[13px] tracking-[0.12em] uppercase text-gold"
               >
-                +33 6 63 23 94 91
+                +33 6 68 42 27 50
               </a>
             </div>
           </div>

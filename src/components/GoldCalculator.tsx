@@ -119,7 +119,7 @@ export default function GoldCalculator({ pricePerGram24K, isLive, updatedAt }: P
 
           <div className="text-center mt-8">
             <a
-              href="https://wa.me/33663239491?text=Bonjour%2C%20je%20souhaite%20une%20estimation%20pour%20mon%20or."
+              href="https://wa.me/33668422750?text=Bonjour%2C%20je%20souhaite%20une%20estimation%20pour%20mon%20or."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 text-[13px] tracking-[0.12em] uppercase text-gold hover:text-gold-light transition-colors"
