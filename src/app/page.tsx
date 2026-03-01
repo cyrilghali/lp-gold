@@ -14,7 +14,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollAnimator from "@/components/ScrollAnimator";
 import { fetchGoldPrice } from "@/lib/gold-price";
 
-export const revalidate = 3600; // revalidate every hour
+export const revalidate = 21600; // revalidate every 6 hours (~120 calls/month)
 
 export default async function Home() {
   const goldPrice = await fetchGoldPrice();

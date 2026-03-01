@@ -22,7 +22,7 @@ export async function fetchGoldPrice(): Promise<GoldPrice> {
   try {
     const res = await fetch("https://www.goldapi.io/api/XAU/EUR", {
       headers: { "x-access-token": apiKey },
-      next: { revalidate: 3600 },
+      next: { revalidate: 21600 }, // 6 hours
     });
 
     if (!res.ok) {
